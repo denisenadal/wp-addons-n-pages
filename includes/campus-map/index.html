@@ -1,0 +1,124 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:300,500" rel="stylesheet">
+	<link rel="stylesheet" href="map.css">
+</head>
+<body>
+	<div id="map-frame">
+		<div id="map"></div>
+		<div id="legend">
+			<ul id="legend-centers" class="legend-list">
+				<li class="legend-cat">
+					<img src="icons/marker-cat.png" alt="Student Centers &amp; Student Services">
+					<h3>Student Centers &amp; Services</h3>
+					<p class="group-nav"><span class="show">Show All</span> | <span class="hide">Hide All</span></p>
+					<i class="fa fa-chevron-down fa-2x">+</i>
+				</li>
+			</ul>
+			<ul id="legend-dining" class="legend-list">
+				<li class="legend-cat">
+					<img src="icons/food-cat.png" alt="food and dining icon">
+					<h3>Food &amp; Dining</h3>
+					<p class="group-nav"><span class="show">Show All</span> | <span class="hide">Hide All</span></p>
+					<i class="fa fa-chevron-down fa-2x">+</i>
+				</li>
+
+			</ul>
+			<ul id="legend-buildings" class="legend-list">
+				<li class="legend-cat">
+					<img src="icons/building-cat.png" alt="building icon">
+					<h3>Campus Buildings</h3>
+					<p class="group-nav"><span class="show">Show All</span> | <span class="hide">Hide All</span></p>
+					<i class="fa fa-chevron-down fa-2x">+</i>
+				</li>
+
+			</ul>
+			<ul id="legend-sports" class="legend-list">
+				<li class="legend-cat">
+					<img src="icons/sports-cat.png" alt="sports fields icon">
+					<h3>Sports Fields &amp; Arenas</h3>
+					<p class="group-nav"><span class="show">Show All</span> | <span class="hide">Hide All</span></p>
+					<i class="fa fa-chevron-down fa-2x">+</i>
+				</li>
+
+			</ul>
+			<ul id="legend-outdoors" class="legend-list">
+				<li class="legend-cat">
+					<img src="icons/tree-cat.png" alt="outdoor spaces icon">
+					<h3>Outdoor Spaces</h3>
+					<p class="group-nav"><span class="show">Show All</span> | <span class="hide">Hide All</span></p>
+					<i class="fa fa-chevron-down fa-2x">+</i>
+				</li>
+
+			</ul>
+			<ul id="legend-dorms" class="legend-list">
+				<li class="legend-cat">
+					<img src="icons/dorm-cat.png" alt="apartments and dorms icon">
+					<h3>Dorms</h3>
+					<p class="group-nav"><span class="show">Show All</span> | <span class="hide">Hide All</span></p>
+					<i class="fa fa-chevron-down fa-2x">+</i>
+				</li>
+			</ul>
+			<ul id="legend-parking" class="legend-list">
+				<li class="legend-cat">
+					<img src="icons/parking-cat.png" alt="parking">
+					<h3>Parking</h3>
+					<p class="group-nav"><span class="show">Show All</span> | <span class="hide">Hide All</span></p>
+					<i class="fa fa-chevron-down fa-2x">+</i>
+				</li>
+				<li class="sub-cat">
+					<input type="checkbox" value="employee" id="employeee">
+					<label for="employee">&nbsp;</label>
+					<span data-link="employee">Faculty &amp; Staff Parking</span>
+				</li>
+				<li class="sub-cat">
+					<input type="checkbox" value="student" id="student">
+					<label for="student">&nbsp;</label>
+					<span data-link="student">Student Parking</span>
+				</li>
+				<li class="sub-cat">
+					<input type="checkbox" value="visitor" id="visitor">
+					<label fr="visitor">&nbsp;</label>
+					<span data-link="visitor">Visitor Parking</span>
+				</li>
+				<li class="sub-cat">
+					<input type="checkbox" value="accessible" id="accessible">
+					<label for="accessible">&nbsp;</label>
+					<span data-link="accessible">Accessible Parking</span>
+				</li>
+				<li class="sub-cat">
+					<input type="checkbox" value="motorcycle" id="motorcycle">
+					<label for="motorcycle">&nbsp;</label>
+					<span data-link="motorcycle">Motorcycle Parking</span>
+				</li>
+				<li class="sub-cat">
+					<input type="checkbox" value="economy" id="economy">
+					<label for="economy">&nbsp;</label>
+					<span data-link="economy">Economy Parking</span>
+				</li>
+				<li class="sub-cat">
+					<input type="checkbox" value="housing" id="housing">
+					<label for="housing">&nbsp;</label>
+					<span data-link="housing">Student Housing Parking</span>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<script
+	src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDHUmYXet4df3IpNKLnbaPXdhZAmjdZpPs">
+	</script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="bundle.js"></script>
+	<script src="MarkerWithLabel.js"></script>
+	<script src="dixie.js"></script>
+	<script>
+		initMap();
+	</script>
+</body>
+</html>

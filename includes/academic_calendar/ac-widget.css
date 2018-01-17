@@ -1,0 +1,91 @@
+.dsu-ac-dates{
+	display: table;
+	border-collapse: collapse;
+	vertical-align: top;
+}
+.dsu-ac-dates  .dsu-ac-item{
+	display: none;
+	font-weight: 300;
+	vertical-align: top;
+}
+.dsu-ac-dates  .dsu-ac-item:first-of-type{
+	border-top: 1px solid #dedede;
+}
+.dsu-ac-dates  .dsu-ac-item:nth-child(n){
+	border-bottom: 1px solid #dedede;
+}
+.dsu-ac-dates .dsu-ac-item:nth-child(-n+8) {
+	display: table-row;
+}
+.dsu-ac-dates  .dsu-ac-item > div{
+	padding: 1.25rem 0;
+	display: table-cell;
+	min-width: 45px;
+    vertical-align: middle;
+}
+.dsu-ac-dates  .dsu-ac-item .dsu-ac-date {
+    text-align: center;
+	padding: 1.25rem 1rem 1.25rem 0;
+}
+.dsu-ac-dates .dsu-ac-date .date-box {
+    height: 3.2rem;
+    min-width: 3.2rem;
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+    display: inline-block;
+    width: auto;
+}
+
+.dsu-ac-dates .dsu-ac-date  h4 {
+	margin: 0;
+	box-sizing: border-box;
+    padding: .2rem;
+	height: 1.2rem;
+    line-height: 1rem;
+    background: #ba1c21;
+    color: #fff;
+    font-size: 1rem;
+     font-weight: 600;
+    text-align: center;
+    letter-spacing: .1rem;
+}
+
+.dsu-ac-dates .dsu-ac-date  h5 {
+	margin: 0;
+    padding: 0 .1rem;
+    box-sizing: border-box;
+    height: 1.8rem;
+    line-height: 1.8rem;
+    background: #fff;
+    color: #000;
+    font-size: 1.4rem;
+    text-align: center;
+    font-weight: 600;
+}
+.dsu-ac-footer {
+	padding-top: 2rem;
+	text-align: center;
+}
+
+.dsu-ac-footer a {
+    border: #bcbcbc 1px solid;
+    border-radius: .25rem;
+	padding: .5rem 1rem;
+	margin: .5rem .25rem;
+    display: inline-block;
+    background: #CCC;
+    color: #fff!important;
+	-webkit-transition: all .15s;
+	-o-transition: all .15s;
+	transition: all .15s;
+}
+.dsu-ac-footer a:hover, .dsu-ac-footer a:active{
+	background: #ba1c21;
+	border:#881518 1px solid;
+}
+
+@media screen and (min-width:1200px){
+	.dsu-ac-dates .dsu-ac-item:nth-child(-n+12) {
+		display: table-row;
+	}
+}

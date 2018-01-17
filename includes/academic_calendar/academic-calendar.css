@@ -1,0 +1,790 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400');
+main{overflow-wrap:normal;}
+main *{
+	padding-left: 0;
+	margin: 0;
+}
+
+#fallSemester,
+#springSemester,
+#summerSemester,
+.month,
+.day,
+.dow,
+main h2,
+main h3{
+	font-family: 'Montserrat', sans-serif;
+}
+div#calendar_container {
+    margin-top: 4rem;
+}
+#academic-calendar{margin-top: 4rem;}
+#calendar_filters{
+	display: inline-block;
+	padding: .25rem 0;
+	}
+
+#reset a,
+#semester_filter li,
+#term_filter li,
+#categories li,
+#sub-filters li,
+.month,
+main h2,
+main h3{
+	letter-spacing: 1px;
+}
+
+#reset a,
+#semester_filter li,
+#term_filter li,
+#categories li,
+#sub-filters li,
+main h2,
+main h3{
+	font-weight:300;
+}
+
+main h2,
+main h3{
+	margin-top: 3rem;
+}
+
+main h2{
+	font-size: 3.5rem;
+	color: #000;
+}
+
+main h3{
+	font-size: 2rem;
+	margin-bottom: .5rem;
+}
+
+/* Reset Button Styles */
+#reset{
+	margin-top: 1rem;
+	float: right;
+	width:40rem;
+}
+
+#reset a{
+	text-decoration: none;
+	color:#ba1c21;
+	margin-right: 2rem;
+}
+.toggle-view.active-view{
+	background: #f1f1f1;
+	color:#a0a1a2!important;
+	padding: 1rem;
+}
+.intro-half{
+	width: 50%;
+	padding: 0 1rem;
+	box-sizing: border-box;
+	float: left;
+}
+main #intro p{
+	font-size: 1.5rem;
+	font-family: montserrat;
+	font-weight: lighter;
+	line-height: 2.2rem;
+	color: #666;
+}
+/* Calendar Filter Styles //////////////////////////////////////////////////*/
+/*#filters{padding-bottom: 4rem;}*/
+#filters ul{
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+/*-------------------------------------------------------------------------*/
+
+#categories li {
+    display: inline;
+    float: left;
+    font-size: 1.4rem!important;
+    margin:.5rem
+}
+
+#categories li.active .filters {
+    display: block;
+    position: absolute;
+    padding:3rem .5rem;
+    left:5;
+    margin-right: .5rem;
+}
+
+#categories li:.active .filters li {
+    display: inline-block;
+    float: left;
+}
+
+/*-------------------------------------------------------------------------*/
+#semester_filter {
+    float: right;
+}
+
+#category-filters{
+	background-color: #f1f1f1;
+	padding: 1rem 0 .7rem .7rem;
+	/*padding-right: 0px;
+	padding-bottom: .7rem;*/
+	width: 85.5rem;
+}
+
+#semester_filter li,
+#term_filter li{
+	padding: 1rem 1.5rem!important;
+}
+
+#sub-filters{
+	margin-top: 1rem;
+}
+
+#semester_filter li,
+ #term_filter li,
+ #categories li{
+	display: inline;
+}
+
+.semester-option.active-semester,
+.term-option.active-term{
+	background-color: #f1f1f1;
+	color: #a0a1a2 !important;
+}
+
+#semester_filter li,
+#term_filter li,
+#categories li,
+#sub-filters li{
+	color:#a0a1a2;
+	padding: .1rem 1.5rem;
+	cursor: pointer;
+}
+
+#semester_filter li,
+#term_filter li,
+#categories li,
+{
+	font-size: 1.4rem!important;
+}
+
+#sub-filters li{
+	font-size: 1.3rem!important;
+}
+
+/*Styling for the Filter links*/
+.classwork li,
+.registration li,
+.fees li,
+.graduation li,
+.breaks li,
+.faculty li {
+	font-size: 1.2rem!important;
+	display: inline-block;
+	line-height: 110%;
+	margin-bottom: .5rem;
+	padding-bottom: 2rem;
+	cursor: pointer;
+}
+
+#mobile-filters-section{
+	display: none;
+}
+/*Styling for the active state of the Categories and Filters sections */
+.category-option.active-category,
+.subcategory .active-category,
+.active-category.subcategory li:hover{
+	color: #fff!important;
+}
+.category-option.active-category.all,.AllTypeSection,
+ .all li:hover{
+	background-color: #a9a9a9;
+}
+.category-option.active-category.classwork,
+.subcategory .active-category.classwork,
+.ac-event.classwork,.ClassworkSection,
+ .classwork li:hover{
+	background-color: #276B8E;
+}
+
+.category-option.active-category.registration,
+.subcategory .active-category.registration,
+.ac-event.registration,.RegistrationSection,
+ .registration li:hover{
+	background-color: #881518;
+}
+
+.category-option.active-category.fees,
+.subcategory .active-category.fees,
+.ac-event.fees, .TuitionSection,
+ .fees li:hover{
+	background-color: #0c233f;
+}
+
+.category-option.active-category.graduation,
+.subcategory .active-category.graduation,
+.ac-event.graduation,.GraduationSection,
+ .graduation li:hover{
+	background-color: #ba1c21;
+}
+
+.category-option.active-category.breaks,
+.subcategory .active-category.breaks,
+.ac-event.breaks,.BreakSection,
+ .breaks li:hover{
+	background-color: #D66164;
+}
+
+.category-option.active-category.faculty,
+.subcategory .active-category.faculty,
+.ac-event.faculty,.FacultySection,
+ .faculty li:hover{
+	background-color: #4A9FD1;
+}
+
+
+
+.hidden{
+	display:none;
+}
+
+/* Calendar Styles /////////////////////////////////////////////////////////*/
+/* These styles build the month elements for the view */
+h2.SemesterTitle{
+	margin:4rem 0 2rem 0;
+	text-align: center;
+}
+
+#fallSemester,
+#springSemester,
+#summerSemester,
+.month,
+.day,
+.dow{
+	font-weight:300;
+}
+
+.calendar-month{
+	width:calc( 33.3% - 2rem);
+	float:left;
+	margin:10px;
+	overflow: visible;
+}
+#academic-calendar:not(.list) .calendar-month {
+    max-height: 260px;
+    min-height: 260px;
+}
+
+.month{
+	background-color: #f1f1f1;
+	color: #a0a1a2;
+	padding: 1rem 1.5rem;
+	font-size: 1.8rem;
+}
+
+.day, .dow{
+	float: left;
+	display:block;
+	width: 14.2%;
+	text-align:center;
+	font-size: 1.6rem;
+	line-height: 3rem;
+	height:3rem;
+}
+
+.day:empty{
+	background-color: #f1f1f1;
+	height: 3rem;
+	margin-bottom: -1rem;
+}
+
+.day{
+	color: #666;
+	box-shadow: inset 0 0 0 .1rem #f1f1f1;
+	position: relative;
+}
+
+.dow{
+	color:#a0a1a2;
+}
+.day .day-number{
+	display: block;
+	position: absolute;
+	top: 0;
+	left:0;
+	width: 100%;
+}
+.events-wrap{
+    width: 100%;
+	position: absolute;
+	display:table;
+    table-layout:fixed;
+	top: 0;
+	left:0;
+}
+.ac-event{
+	display:table-cell;
+}
+/* This is the styling for the dates with academic requirements on them*/
+.ac-event {
+	font-size:0.7em;
+}
+
+.ac-event:only-child{
+	font-size:1.6rem;
+}
+
+.ac-event.active-category {
+	cursor:pointer;
+	color: #fff;
+}
+.day .day-num{
+	color:#000;
+	display: block;
+	position: absolute;
+	top:0;
+	left:0;
+	width: 100%;
+	height: 100%;
+	z-index: 0;
+}
+
+.ac-event:not(.active-term),
+.ac-event:not(.active-semester),
+.ac-event:not(.active-category),
+.subcategory:not(.active-category)
+{display: none;}
+
+
+.category-option:not(.active-category){
+	background-color: transparent;
+}
+
+
+
+/* tablet view*/
+@media only screen and (max-width: 768px) {
+	.calendar-month{width: calc( 50% - 20px);}
+	.intro-half{width: 100%;}
+	main{
+		padding-left:1rem!important;
+		padding-right: 2rem!important;
+	}
+	
+
+	#reset{
+		float: none!important;
+		width: 37rem;
+	}
+	#mobile-filters-section{
+		display: block!important;
+	}
+
+    #intro, #term-container, #category-filters{
+        display:none;
+    }
+    .mobile-term, .mobile-filters{
+		margin:2rem 0;
+	}
+
+	.filter-type, .semester-type {
+		border-bottom: 1px solid #ddd;
+		padding: 5px 10px;
+		max-width: 400px;
+		color:#a0a1a2;
+		font-size:1rem;
+	}
+
+	.termSelect, .filterSelect{
+		font-weight:400;
+		line-height:3rem;
+		font-size: 1.8rem;
+		color:#a0a1a2;
+	}
+
+	label{
+	  font-size:1.5rem;
+	  padding-left:1rem;
+	  color: #c1c0c1;
+	  letter-spacing:.1rem;
+	  font-weight:400;
+	}
+
+	.mobile-filters ul, .mobile-term ul {
+	  display: none;
+	  background: #fff;
+	  border: .1rem solid #ddd;
+	  max-width:73.8rem;
+	  overflow: auto;
+	  margin:0;
+	  padding:0;
+	}
+
+	.mobile-term ul li{
+		padding-left: 1.5rem;
+		font-weight: 300;
+	}
+
+	.mobile-filters ul li, .mobile-term ul li {
+		line-height: 4rem;
+		padding-top: .5rem;
+		list-style-type:none;
+		color:#a0a1a2;
+	}
+
+	.classwork li,
+	.registration li,
+	.fees li,
+	.graduation li,
+	.breaks li,
+	.faculty li{
+		padding-left: 1.5rem;
+		line-height: 3rem;
+		display: block;
+		list-style-type:none;
+		font-size:1.7rem!important;
+		font-weight:400;
+		margin: 0;
+		letter-spacing:1px; 
+	}
+
+	.section{
+	  color:#fff!important;
+	  font-weight:400!important;
+	  padding-left: 1.5rem !important;
+	  line-height: 3rem;
+	}
+
+	::-webkit-scrollbar { 
+	    display: none; 
+	}
+
+	.semester-type i, .filter-type i{
+		padding-top: .5rem;
+		position: absolute;
+		right: 3rem;
+		font-size: 3rem!important;
+	}
+
+	.RegistrationSection i,
+	.TuitionSection i,
+	.ClassworkSection i,
+	.GraduationSection i,
+	.BreakSection i,
+	.FacultySection i{
+		color: rgba(255,255,255, 0.5);
+		position: absolute;
+		right: 3rem; 
+	}
+	.dsu-post li{
+		padding-bottom: 0!important;
+	}
+}
+
+@media only screen and (max-width: 500px) {
+    main {
+        width:100%;
+        margin-right: auto;
+        margin-left: auto;
+    }
+    /*h1{
+    	margin-bottom: 1.5rem;
+    }*/
+    #category-filters{
+	background-color: #f1f1f1;
+	padding: .5rem;
+	width: 100%;
+}
+    .calendar-month{
+	width:100%;
+	float:none;
+	margin:10px;
+	}
+
+	.month{
+		background-color: #f1f1f1;
+		color: #a0a1a2;
+		padding: 1rem 1.5rem;
+		font-size: 1.8rem;
+	}
+    /*.calendar{
+    	float: none;
+		height: 280px;
+		margin: 10px;
+		width: 95%;
+	}
+	#fall_semester,
+	#spring_semester,
+	#semester_filter{
+		display: none;
+	}
+
+   .registration li,
+   .fees li{
+		font-size: 12px;
+		display: block;
+		line-height: 110%;
+		margin-bottom: 5px;
+		padding-bottom: 20px;
+		cursor: pointer;
+
+	}*/
+}
+/* styles for list view */
+#academic-calendar.list .calendar-month{width:100%;min-height: 0;}
+#academic-calendar.list .calendar-header{display: none;}
+#academic-calendar.list .day{
+	width:calc( 100% - 2rem);
+	height: auto;
+	padding:1rem;
+	line-height: 2rem;
+}
+#academic-calendar.list .day::before{
+	content: attr(id);
+	display: block;
+	float:left;
+	color: #000;
+}
+#academic-calendar.list .day:not([id]) {
+    display: none;
+}
+#academic-calendar.list .day-number{display: none;}
+#academic-calendar.list .ac-event.active-term.active-category.active-semester{
+	background: transparent;
+    display: block;
+    text-align: left;
+    color: transparent;
+	font-size: 1.6rem;
+	line-height: 2rem;
+	height: auto!important;
+	max-width: calc(100% - 150px);
+}
+#academic-calendar.list .ac-event::before{
+	content: attr(aria-label);
+    display: block;
+    border: none;
+    position: static;
+    color: #000;
+    opacity: 1;
+    visibility: visible;
+	margin-bottom: 0;
+}
+
+#academic-calendar.list .ac-event::before:hover{position: static;transform: none;}
+
+#academic-calendar.list .events-wrap {
+    max-width: calc( 100% - 50px);
+    position: static;
+	display: block;
+	margin-left: 100px;
+}
+#academic-calendar.list .day::after{
+	content:'';
+	clear:both;
+	float: none;
+	display: table;
+}
+#academic-calendar.list .hint--top:hover:before{transform: none;}
+#academic-calendar.list .ac-event::after{display:none;}
+
+#academic-calendar.list .ac-event.active-category{
+	cursor: default;
+}
+
+@media print {
+	header, nav, footer{display: none;}
+	body, .mm-page, main #the-content{
+		overflow: visible;
+		width: 100%;
+	}
+	main #the-content{
+		overflow-x: hidden;
+		position: static;
+		padding: 0;
+	}
+	main,
+	div#calendar_container,
+	#filters {
+		margin: 0;
+		padding: 0;
+	}
+	.breadcrumbs,
+	.content-header,
+	#intro,
+	#category-filters,
+	#calendar_filters,
+	#semester_filter,
+	#term_filter,
+	div#reset,
+	h3#calendar_filters,
+	hr{
+		display: none;
+	}
+
+
+	#semester_filter,
+	#term-container {
+	    float: left;
+	}
+
+	#sub-filters .subcategory{
+		display: block!important;
+		visibility: visible;
+		width: 100%;
+		padding: .5rem;
+		margin:1rem 0 0;
+		float: left;
+		-webkit-print-color-adjust: exact;
+		color-adjust: exact;
+	}
+	#sub-filters::after,
+	#category-filters::after{
+		clear: both;
+		display: table;
+		content: '';
+	}
+	.subcategory.registration {
+		background: #881518
+	}
+	.subcategory.fees {
+		background: #0c233f;
+	}
+	.subcategory.classwork {
+		background: #276B8F;
+	}
+	.subcategory.graduation {
+		background: #ba1c21;
+	}
+	.subcategory.breaks {
+		background: #D66168;
+	}
+	.subcategory.faculty {
+		background: #4A9FD1;
+	}
+
+	.subcategory::before{
+		color: white;
+		display: block;
+		font-size:  1.5rem;
+    	line-height: 1.7rem;
+		border-bottom: 2px solid #fff;
+		margin-bottom: .5rem;
+	}
+	.subcategory.registration::before {
+		content: "Registration";
+	}
+	.subcategory.fees::before {
+		content: "Tuition/Fees";
+	}
+	.subcategory.classwork::before {
+		content: "Classwork";
+	}
+	.subcategory.graduation::before {
+		content: "Graduation";
+	}
+	.subcategory.breaks::before {
+		content: "Breaks";
+	}
+	.subcategory.faculty::before {
+		content: "Faculty";
+	}
+	#sub-filters .subcategory li{
+		padding: .25rem 0 0 3.5rem;
+	    margin: 0;
+		display: block;
+		font-size: 1.1rem!important;
+	    line-height: 1.3rem;
+	    text-indent: -3.5rem;
+	    color: #fff;
+	    letter-spacing: .04rem;
+	}
+	#sub-filters .subcategory li::before{
+		content: attr(rel)" - ";
+		color: white;
+		display: inline;
+	}
+	div#sub-filters {
+	    width: calc( 300px - 4rem);
+	    float: left;
+	    margin:2 0rem 0 0;
+		box-sizing: border-box;
+	}
+	h2.SemesterTitle {
+	    font-size: 2.5rem;
+	    display: block;
+	    width: 100%;
+		margin: 0 0 0 2rem;
+	    padding: 0;
+	    line-height: 2.5rem;
+		text-align: left;
+	}
+
+	div#academic-calendar {
+		margin: 0;
+		margin-left:  280px;
+	}
+	div#calendar-inner {
+		display: flex;
+		flex-flow: row wrap;
+	}
+	.dow{
+		font-size: 1rem!important;
+	    line-height: 1rem;
+	    height: 1rem!important;
+	}
+	.day, .ac-event {
+		font-size: 1rem!important;
+	    line-height: 1.75rem;
+	    height: 1.75rem!important;
+	}
+	#academic-calendar:not(.list) .calendar-month {
+	    width:  calc(50% - 2rem);
+	    margin: .5rem 1rem;
+	    page-break-inside: avoid;
+		max-width: 225px;
+		min-height: 0;
+		overflow: hidden;
+		float: none
+	}
+
+	.month {
+	    padding: .5rem 1rem!important;
+	    font-size: 1rem!important;
+	    line-height: 1rem!important;
+	}
+
+	#academic-calendar.list #sub-filters .subcategory,
+	#academic-calendar.list .month{
+		display: none!important;
+	}
+
+	#academic-calendar.list .day {
+    padding: .25rem 1rem;
+	border-bottom: 1px solid #dedede;
+		width:calc( 100% - 2rem);
+		height: auto!important;
+		padding:.25rem!important;
+		line-height: 1rem;
+	}
+	#academic-calendar.list .calendar-month{
+		margin: 0;
+	}
+	#academic-calendar.list .ac-event.active-term.active-category.active-semester{
+		font-size: 1rem;
+		line-height: 1rem;
+}
+
+	.ac-event.registration,
+	.ac-event.fees,
+	.ac-event.breaks,
+	.ac-event.graduation,
+	.ac-event.classwork,
+	.ac-event.faculty,
+	.semester-option.active-semester,
+	.term-option.active-term{
+		-webkit-print-color-adjust: exact;
+		color-adjust: exact;
+	}
+}

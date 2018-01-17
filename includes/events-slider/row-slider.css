@@ -1,0 +1,162 @@
+.mc-calendar{
+	position: relative;
+	padding: 0 5rem;
+}
+.mc-slider-wrap{
+	width:100%;
+	max-width:100%;
+	height: auto;
+	overflow: hidden;
+}
+/*whitespace:nowrap on parent simulates "flexbox" on inline-block elements, in this case, the slide li's*/
+ul.mc-slider{
+	margin:0;
+	padding:0;
+	white-space: nowrap;
+	width:100%;
+	max-width:100%;
+	height: auto;
+}
+/*hide nav arrows when slider doesn't contain enough events to slide through*/
+.mc-slider-wrap ~ i.mc-slider-nav{display: none;color:transparent;}
+
+.mc-slider-wrap.animated-slider ~ i.mc-slider-nav{
+	display: inline-block;
+	position: absolute;
+	padding-bottom: 10rem;/* this is to keep arrows centered to image, 5rem for height of arrow + 5rem for height of text box at bottom*/
+	top: 50%;
+	transform: translateY(-50%);
+	color: #f1f1f1;
+	color: rgba(240,240,240,1);
+    text-shadow: 2px 2px 0px rgba(0,0,0,.1);
+	height: 0;
+	right:auto;
+	left:-.5rem;
+	transition: all .5s;
+	z-index: 2;
+}
+
+.mc-slider-wrap.animated-slider ~ i.mc-slider-nav:hover{
+	color:#ba1c21;
+}
+.mc-slider-wrap.animated-slider ~  i.mc-slider-nav.mc-featured-right {
+    left:auto;
+	right:-.5rem;
+    transition: all .5s;
+}
+.mc-calendar .accent{
+	color:#B9B9BB;
+}
+.mc-slider li.mc-event-item{
+	padding:1rem 1rem 0;
+	width: calc( 100% - 2rem);/*box width varies by # of items*/
+	display: inline-block;
+	white-space: normal;
+	background: white;
+	vertical-align: top;
+	cursor: pointer;
+}
+
+.mc-slider li.mc-event-item .img-frame{
+	width: 100%;
+	position: relative;
+	padding-bottom: 56.9%;/*padding bottom used to create responsive aspect ratio box*/
+	height: 0;
+	overflow: hidden;
+}
+
+.mc-slider li.mc-event-item .img-frame img{
+	width: auto;
+	height:100%;
+	position: absolute;
+	top: 0;
+	left: 50%;
+	transform: translateX(-50%);
+	max-width: none!important;
+	max-height: none;
+}
+
+.mc-slider li.mc-event-item .date{
+	background: rgba(136,21,24,.9);
+	color:white;
+	width: 6rem;
+	height: 6rem;
+	box-sizing: border-box;
+	padding: .5rem;
+	word-spacing:6rem;
+	font-size: 3rem;
+	line-height: 2rem;
+	font-weight: 600;
+	text-align: center;
+	position: absolute;
+	bottom: 0;
+	right: 0;
+}
+.mc-slider li.mc-event-item .date::first-line{
+	font-size: 1.2rem;
+	font-weight: 300;
+	line-height: 2rem;
+}
+.mc-slider li.mc-event-item .event-title{
+	font-family: 'Montserrat',Arial, sans-serif!important;
+	font-size: 2rem;
+	line-height: 2.25rem;
+	color:#343434;
+	max-height: 6.75rem;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+.mc-slider li.mc-event-item .event-time{
+	font-family: 'Montserrat', Arial, sans-serif!important;
+	font-size: 1.6rem;
+	font-weight: 400;
+	color:#b9b9b9
+}
+
+.mc-slider li.mc-event-item:hover{
+	background: black;
+}
+.mc-slider li.mc-event-item:hover .event-title{
+	color: white;
+}
+@media screen and (min-width:540px){
+	.mc-slider li.mc-event-item{
+		width: calc( 50% - 2rem);
+	}
+	.mc-slider.has-1-items li.mc-event-item{
+		margin:0 auto;
+	}
+}
+@media screen and (min-width:769px){
+	.mc-slider li.mc-event-item{
+		width: calc( 33.3% - 2rem);
+	}
+	.mc-slider.has-2-items li.mc-event-item{
+		margin:0 9%;
+	}
+}
+@media screen and (min-width:992px){
+	.mc-slider li.mc-event-item{
+		width: calc( 25% - 2rem);
+	}
+	.mc-slider.has-2-items li.mc-event-item{
+		margin:0 12.5%;
+	}
+	.mc-slider.has-3-items li.mc-event-item{
+		margin:0 4%;
+	}
+}
+@media screen and (min-width:1600px){
+	.mc-slider li.mc-event-item{
+		width: calc( 20% - 2rem);
+	}
+	.mc-slider.has-2-items li.mc-event-item{
+		margin:0 15%;
+	}
+	.mc-slider.has-3-items li.mc-event-item{
+		margin:0 7%;
+	}
+	.mc-slider.has-4-items li.mc-event-item{
+		margin:0 2.5%;
+	}
+}
